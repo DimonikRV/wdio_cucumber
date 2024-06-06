@@ -1,12 +1,10 @@
 Feature: The Internet Guinea Pig Website
 
-  Scenario Outline: As a user, I can log into the secure area
-
-    Given I am on the login page
-    When I login with <username> and <password>
-    Then I should see a flash message saying <message>
+  Scenario Outline: As a user, I should see the error message, when the Username field in the login form is empty
+    Given User is located on the main page of <website> website
+    When User click on the <buttonname> button
+    Then Then User should see <message> error message
 
     Examples:
-      | username | password             | message                        |
-      | tomsmith | SuperSecretPassword! | You logged into a secure area! |
-      | foobar   | barfoo               | Your username is invalid!      |
+      | website                   | buttonname | message                            |
+      | https://www.saucedemo.com | Login      | Epic sadface: Username is required |
