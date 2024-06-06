@@ -1,5 +1,5 @@
-const { $ } = require('@wdio/globals')
-const Page = require('./page');
+
+import Page from './page';
 
 class SecurePage extends Page {
 
@@ -8,4 +8,4 @@ class SecurePage extends Page {
     }
 }
 
-module.exports = new SecurePage();
+export default new SecurePage();

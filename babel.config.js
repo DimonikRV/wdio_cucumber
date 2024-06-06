@@ -4,8 +4,10 @@ module.exports = {
             "@babel/preset-env",
             {
                 "targets": {
-                    "node": 18
-                }
+                    "node": 18, 
+                },
+                "useBuiltIns": "usage",
+                "corejs": 3
             }
         ]
     ]
