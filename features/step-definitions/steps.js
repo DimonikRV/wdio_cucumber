@@ -1,19 +1,18 @@
 import { Given, When, Then } from "@cucumber/cucumber";
-import LoginPage from "../pageobjects/login.page"
-import SecurePage from "../pageobjects/secure.page"
-
+import loginPage from "../pageobjects/login.page";
+import securePage from "../pageobjects/secure.page";
 
 Given(/^User is located on the main page of (.*) website$/, async (path) => {
-  await LoginPage.open(path);
+  await loginPage.open(path);
 });
 
 When(/^User click on the Login button$/, async () => {
-  await LoginPage.login();
+  await loginPage.login();
 });
 
-Then(/^Then User should see (.*) error message$/, async (message) => {
-  await expect(SecurePage.flashAlert).toBeExisting();
-  await expect(SecurePage.flashAlert).toHaveText(
+Then(/^User should see the (.*) error message$/, async (message) => {
+  await expect(securePage.flashAlert).toBeExisting();
+  await expect(securePage.flashAlert).toHaveText(
     expect.stringContaining(message)
   );
 });

@@ -1,6 +1,6 @@
-import Page from "./page";
+import page from "./page";
 
-class LoginPage extends Page {
+class LoginPage extends page {
   get inputUsername() {
     return $('input[data-test="username"]');
   }
